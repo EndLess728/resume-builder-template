@@ -1,0 +1,105 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.6/schema.json
+#
+# Your resume. Replace the example content below with your own, then push.
+# Everything here is made up. Every field is optional except `name`.
+#
+# Field reference:  https://docs.rendercv.com/
+# Themes:           change `design.theme` (classic, engineeringresumes, sb2nov, moderncv, ...)
+#
+# Tip: the first line of this file gives you autocomplete and validation in
+# VS Code with the YAML extension.
+cv:
+  name: Alex Rivera
+  headline: Senior Mobile Engineer
+  location: London, UK
+  phone: +44 20 7946 0958 # Ofcom drama range, reserved for fiction
+  email: alex.rivera@example.com
+  social_networks:
+    - network: GitHub
+      username: example
+  custom_connections:
+    - placeholder: LinkedIn
+      url: https://www.linkedin.com/in/example/
+      fontawesome_icon: linkedin
+  sections:
+    profile_summary:
+      - Mobile engineer with 7 years building cross-platform apps in React Native and Expo, from prototype to 200K+ users. Focused on performance, Swift and Kotlin native modules, and release pipelines that let teams ship weekly.
+    skills:
+      - label: Languages
+        details: TypeScript, JavaScript, Swift, Kotlin, SQL
+      - label: Mobile
+        details: React Native, Expo, Expo Router, EAS Build & Update, Native Modules, Reanimated
+      - label: Data & State
+        details: GraphQL, REST, TanStack Query, Zustand, Redux Toolkit, SQLite, WebSockets
+      - label: Tooling
+        details: Jest, React Native Testing Library, Detox, Maestro, GitHub Actions, Firebase, Sentry
+    experience:
+      - company: Example Corp
+        position: Senior Mobile Engineer
+        start_date: 2022-03
+        end_date: present
+        location: London, UK
+        highlights:
+          - Lead a team of 5 engineers shipping a React Native banking app to 200K+ monthly users with a 99.8% crash-free rate
+          - Cut cold-start time by 30% by moving to the New Architecture and lazy-loading heavy screens
+          - Automated iOS and Android releases with EAS Build and GitHub Actions, cutting release day from 4 hours to 20 min
+          - Introduced Detox and Maestro end-to-end suites that run on every pull request and block regressions before release
+      - company: Sample Studio
+        position: Mobile Developer
+        start_date: 2019-06
+        end_date: 2022-02
+        location: Austin, TX
+        highlights:
+          - Built 3 client apps from scratch in React Native, from design hand-off to App Store and Google Play release
+          - Wrote Swift and Kotlin modules for background location, push notifications and in-app purchases
+          - Added offline-first sync with SQLite and a background queue, so field workers could use the app without signal
+      - company: Placeholder Labs
+        position: Junior iOS Developer
+        start_date: 2018-01
+        end_date: 2019-05
+        location: Austin, TX
+        highlights:
+          - Maintained a Swift event-ticketing app and migrated its main flows to React Native
+          - Raised unit test coverage from 20% to 65% on the checkout and payments code
+    projects:
+      - name: "[Trailmate](https://example.com/trailmate)"
+        summary: Offline hiking companion with GPS tracking and downloadable maps
+        highlights:
+          - Built map tile caching and battery-friendly location tracking in Expo, reaching 4.8 stars across 10K+ installs
+      - name: "[Splitwise Lite](https://example.com/split)"
+        summary: Expense splitting for groups, with real-time sync between devices
+        highlights:
+          - Designed a conflict-free sync model over WebSockets so edits on two phones never overwrite each other
+    open_source:
+      # Entries whose name links to an npm package page get a live download
+      # count appended to their summary by the npm-download-stats module.
+      - name: "[left-pad](https://www.npmjs.com/package/left-pad)"
+        summary: String left pad, used here only to demo the npm download counter
+        highlights:
+          - Replace this with your own package
+    education:
+      - institution: State University
+        area: Computer Science
+        degree: BSc
+        end_date: 2017-05
+design:
+  theme: engineeringresumes
+  templates:
+    top_note: "*LAST_UPDATED MONTH_ABBREVIATION DAY, YEAR*"
+  typography:
+    line_spacing: 0.4em
+locale:
+  language: english
+  last_updated: Last updated on
+settings:
+  render_command:
+    typst_path: rendercv_output/NAME_IN_SNAKE_CASE_CV.typ
+    pdf_path: rendercv_output/NAME_IN_SNAKE_CASE_CV.pdf
+    markdown_path: rendercv_output/NAME_IN_SNAKE_CASE_CV.md
+    html_path: rendercv_output/NAME_IN_SNAKE_CASE_CV.html
+    png_path: rendercv_output/NAME_IN_SNAKE_CASE_CV.png
+    dont_generate_markdown: true
+    dont_generate_html: true
+    dont_generate_typst: false
+    dont_generate_pdf: false
+    dont_generate_png: false

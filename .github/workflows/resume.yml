@@ -1,0 +1,35 @@
+name: Resume
+
+# Builds My_CV.yaml into a PDF with resume-builder:
+# https://github.com/EndLess728/resume-builder
+#
+# The PDF lands in rendercv_output/ and as a downloadable artifact on each run.
+# Google Drive upload and Telegram messages turn on when you add their secrets
+# (Settings → Secrets and variables → Actions). See README.md.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "My_CV.yaml" # rebuild when your CV changes (rename here if you rename the file)
+  schedule:
+    - cron: "0 18 * * 0" # every Sunday, refreshes npm download counts; delete if you don't need it
+  workflow_dispatch: # adds a "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write # lets the workflow commit rendercv_output/ back to this repo
+
+jobs:
+  build:
+    # @v1 gets fixes and new features, never breaking changes.
+    uses: EndLess728/resume-builder/.github/workflows/build-resume.yml@v1
+    with:
+      cv_file: My_CV.yaml
+
+      # Optional settings, with their defaults:
+      # update_npm_stats: true              # add live download counts to npm package entries
+      # telegram_send_pdf: false            # attach the PDF to the Telegram message
+      # telegram_notify_on_failure: true    # get a Telegram message when a build fails
+      # commit_output: true                 # commit rendercv_output/ to this repo
+      # upload_artifact: true               # attach the PDF to each workflow run
+    secrets: inherit # passes this repo's Drive / Telegram secrets to the modules

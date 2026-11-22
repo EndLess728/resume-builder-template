@@ -6,7 +6,7 @@
   name: "Alex Rivera",
   title: "Alex Rivera - CV",
   footer: context { [#emph[Alex Rivera -- #str(here().page())\/#str(counter(page).final().first())]] },
-  top-note: [ #emph[Last updated on Nov 20, 2026] ],
+  top-note: [ #emph[Last updated on Nov 22, 2026] ],
   locale-catalog-language: "en",
   text-direction: ltr,
   page-size: "us-letter",
@@ -81,7 +81,7 @@
   date: datetime(
     year: 2026,
     month: 11,
-    day: 20,
+    day: 22,
   ),
 )
 
